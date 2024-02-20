@@ -1,10 +1,10 @@
-function Card({group,title,date,color,theme}){
+function Card({theme,title,date,color}){
     return(
         <div className="cards__item">
             <div className="cards__card card">
               <div className="card__group">
                 <div className={`card__theme ${color}`}>
-                  <p className={color} >{group}</p>
+                  <p className={color} >{theme}</p>
                 </div>
                 <a href="#popBrowse" target="_self">
                   <div className="card__btn">
