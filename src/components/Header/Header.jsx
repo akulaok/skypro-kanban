@@ -18,7 +18,7 @@ function Header({onCardAdd}) {
             </a>
           </div>
           <nav className="header__nav">
-            <button className="header__btn-main-new _hover01"  id="btnMainNew">
+            <button onClick={onCardAdd} className="header__btn-main-new _hover01"  id="btnMainNew">
               Создать новую задачу
             </button>
             <a onClick={toggleDropdown} className="header__user _hover02">
