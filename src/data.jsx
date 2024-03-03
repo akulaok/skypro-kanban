@@ -1,5 +1,4 @@
 export const cardList = [
-
     {
         id: 1,
         theme: "Web Design",
@@ -23,21 +22,21 @@ export const cardList = [
     },
     {
         id: 3,
-        theme: "Data",
+        theme: "Copywriting",
         title: "Название задачи",
         date: "30.10.23",
         status: "В работе",
     },
     {
         id: 4,
-        theme: "Ml",
+        theme: "Copywriting",
         title: "Название задачи",
         date: "30.10.23",
         status: "Готово",
     },
     {
         id: 5,
-        theme: "Math",
+        theme: "Research",
         title: "Название задачи",
         date: "30.10.23",
         status: "Тестирование",
