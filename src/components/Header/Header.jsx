@@ -1,29 +1,31 @@
 import React, { useState } from 'react';
+import { Сontainer } from "../Common/Common.styled";
+import { HeaderWrapper, HeaderBlock, HeaderLogo, HeaderNav, HeaderBtnMainNew, HeaderUser, Checkbox, HeaderBtnExit } from "./Header.styled"
 
 function Header({onCardAdd}) {
   const [isOpen, setIsOpen] = useState(false);
   const toggleDropdown = () => setIsOpen((prevState) => !prevState);
   return (
-    <header className="header">
-      <div className="container">
-        <div className="header__block">
-          <div className="header__logo _show _light">
+    <HeaderWrapper>
+      <Сontainer>
+        <HeaderBlock>
+          <HeaderLogo>
             <a href="" target="_self">
               <img src="public/logo.png" alt="logo" />
             </a>
-          </div>
-          <div className="header__logo _dark">
+          </HeaderLogo>
+          <HeaderLogo>
             <a href="" target="_self">
               <img src="public/logo_dark.png" alt="logo" />
             </a>
-          </div>
-          <nav className="header__nav">
-            <button onClick={onCardAdd} className="header__btn-main-new _hover01"  id="btnMainNew">
+          </HeaderLogo>
+          <HeaderNav>
+            <HeaderBtnMainNew onClick={onCardAdd} >
               Создать новую задачу
-            </button>
-            <a onClick={toggleDropdown} className="header__user _hover02">
+            </HeaderBtnMainNew>
+            <HeaderUser onClick={toggleDropdown}>
               Ivan Ivanov
-            </a>
+            </HeaderUser>
             {isOpen && <div
               className="header__pop-user-set pop-user-set"
               id="user-set-target"
@@ -33,16 +35,16 @@ function Header({onCardAdd}) {
               <p className="pop-user-set__mail">ivan.ivanov@gmail.com</p>
               <div className="pop-user-set__theme">
                 <p>Темная тема</p>
-                <input type="checkbox" className="checkbox" name="checkbox" />
+                <Checkbox/>
               </div>
-              <button type="button" className="_hover03">
+              <HeaderBtnExit>
                 <a href="#popExit">Выйти</a>
-              </button>
+              </HeaderBtnExit>
             </div>}
-          </nav>
-        </div>
-      </div>
-    </header>
+          </HeaderNav>
+        </HeaderBlock>
+      </Сontainer>
+    </HeaderWrapper>
   );
 }
 

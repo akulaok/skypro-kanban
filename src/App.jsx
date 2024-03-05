@@ -1,4 +1,4 @@
-import { useState,useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { cardList } from "./data.jsx";
 import './App.css'
 import PopExit from './components/PopExit/PopExit'
@@ -6,6 +6,8 @@ import PopNewCard from './components/PopNewCard/PopNewCard'
 import PopBrowse from './components/PopBrowse/PopBrowse'
 import Header from './components/Header/Header'
 import Main from './components/Main/Main'
+import { GlobalStyle } from './Global.styled.js';
+import { Wrapper } from './components/Common/Common.styled.js';
 
 function App() {
   const [cards, sedCards] = useState(cardList);
@@ -13,7 +15,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 0);
   }, []);
 
   function onCardAdd() {
@@ -30,16 +32,14 @@ function App() {
 
   return (
     <>
-      <div className="wrapper">
-        {/* pop-up start*/}
+      <GlobalStyle/>
+      <Wrapper>
         <PopExit />
         <PopNewCard />
         <PopBrowse />
-        {/* pop-up end*/}
-        <Header onCardAdd={onCardAdd}/>
-        <Main cards={cards} isLoading={isLoading}/>
-      </div>
-
+        <Header onCardAdd={onCardAdd} />
+        <Main cards={cards} isLoading={isLoading} />
+        </Wrapper>
     </>
 
   )

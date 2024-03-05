@@ -1,12 +1,14 @@
 import Column from "../Column/Column";
 import { statusList } from "../../data.jsx";
+import { MainBlock, MainContent, MainWrapper } from "./Main.styled.js";
+import { Сontainer} from "../Common/Common.styled.js"
 
 function Main({ cards, isLoading }) {
   return (
-    <main className="main">
-      <div className="container">
-        <div className="main__block">
-          <div className="main__content">
+    <MainWrapper>
+      <Сontainer>
+        <MainBlock>
+          <MainContent>
             {
               isLoading ?
                 "Loading" :
@@ -17,10 +19,10 @@ function Main({ cards, isLoading }) {
                     cardList={cards.filter((card) => card.status === status)}
                   />
                 ))}
-          </div>
-        </div>
-      </div>
-    </main>
+          </MainContent>
+        </MainBlock>
+      </Сontainer>
+    </MainWrapper>
   );
 }
 
